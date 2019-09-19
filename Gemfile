@@ -7,7 +7,7 @@ ruby '2.6.2'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-gem 'mysql2'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -48,6 +48,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem "webpacker", "~> 4.x"
+  gem "mysql2", ">= 0.4.4", "< 0.6.0"
 end
 
 group :development do
@@ -58,6 +59,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rails-erd'
+end
+
+group :production do
+  gem "pg"
 end
 
 group :test do
